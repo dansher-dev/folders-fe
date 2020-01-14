@@ -1,0 +1,12 @@
+<div *ngFor="let folder of folders" [ngClass]="{'favorite': folder.favorite}">
+  <div class="folder">
+    <mat-icon (click)="showSubsForId(folder.id)" *ngIf="folder.subFolders && !indexes.includes(folder.id)">keyboard_arrow_down</mat-icon>
+    <mat-icon (click)="hideSubsForId(folder.id)" *ngIf="folder.subFolders && indexes.includes(folder.id)">keyboard_arrow_up</mat-icon>
+    <a [routerLink]="'' + folder.id"> {{folder.nameFolder}} </a>
+  </div>
+  <div *ngIf="folder.subFolders && indexes.includes(folder.id)" class="subfolders">
+    <app-folders [folders]="folder.subFolders">
+      <!--<app-folders *ngFor="let folder "></app-folders>-->
+    </app-folders>
+  </div>
+</div>

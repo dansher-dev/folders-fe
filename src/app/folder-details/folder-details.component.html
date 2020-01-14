@@ -1,0 +1,57 @@
+<div class="content-container" *ngIf="selectedFolder && isDetails; else formTemplate">
+  <div class="main-wrapper">
+    <div class="main-header">
+      <h1 class="name">
+        {{selectedFolder.nameFolder}}
+      </h1>
+    </div>
+    <div class="main-content">
+      <img src="{{selectedFolder.contentFolder.image}}">
+      <div>
+      {{selectedFolder.contentFolder.text}}
+    </div>
+    </div>
+    <button mat-button (click)="onAddFolder()">Add Sub Folder</button>
+  </div>
+</div>
+
+<ng-template #formTemplate>
+  <form [formGroup]="createFolderForm">
+    <div class="form-wrapper">
+      <div class="form-header">
+        <mat-icon>star_border</mat-icon>
+        <mat-form-field>
+          <input matInput
+                 id="name"
+                 #name
+                 formControlName="name"
+                 placeholder="Type name"
+                 maxlength="100"
+                 required
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput
+                 id="url"
+                 #urlImage
+                 formControlName="urlImage"
+                 placeholder="Image url"
+                 required
+          >
+        </mat-form-field>
+        <button mat-button
+                (click)="saveNewFolder(name.value, textArea.value, urlImage.value)"
+                [disabled]="createFolderForm.invalid">Save</button>
+      </div>
+
+      <div class="form-content">
+        <textarea formControlName="text"
+                  #textArea
+                  placeholder="Your text here"
+                  id="text"
+        >
+        </textarea>
+      </div>
+    </div>
+  </form>
+</ng-template>
