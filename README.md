@@ -1,6 +1,6 @@
 # RecursionFe
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
+Project displays list of folders which can contain subfolders and there is no depth limits for folrders nesting. User can browse folders or add new subfolders.
 
 ## Development server
 
