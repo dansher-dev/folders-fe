@@ -37,8 +37,13 @@ export class FolderDetailsComponent implements OnInit, OnDestroy {
     this.route.params
       .subscribe(
         (params: Params) => {
-          this.id = +params.id;
-          this.selectedFolder = this.folderService.findFolderById(this.folderService.foldersList, this.id);
+          if (params.id === 'newFolder') {
+            this.isDetails = false;
+            this.id = 0;
+          } else {
+            this.id = +params.id;
+            this.selectedFolder = this.folderService.findFolderById(this.folderService.foldersList, this.id);
+          }
         }
       );
     this.selectedFolder = null;
