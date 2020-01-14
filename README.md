@@ -1,6 +1,11 @@
 # RecursionFe
 
-Project displays list of folders which can contain subfolders and there is no depth limits for folrders nesting. User can browse folders or add new subfolders.
+Project displays recursive list of folders there is no depth limits for folders nesting. Each folder can contain own subfolders. When you click on any folder, the content of the selected folders is displayed. Correct creation of folders is provided by validation. When you click on the save button, the new folder is saved in the folder tree. If this is the main folder, saving will occur in the list of "folders".
+A service is involved in the work which describes - receiving data from the request api, searching for folders and adding folders. To style the application css is used. Project created wit usage of: Angular 8.3.17, RxJS 6.4.0.
+
+![Folder details](./src/assets/folder-details.png)
+
+![Add new folder](./src/assets/newFolder.png)
 
 ## Development server
 

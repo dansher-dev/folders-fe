@@ -1,9 +1,11 @@
 .main-folders {
   display: flex;
   .folders-sidebar {
+    background-color: #BCAA99;
     min-width: fit-content;
   }
 }
 a {
   margin-left: 20px;
+  text-decoration: none;
 }
